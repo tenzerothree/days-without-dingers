@@ -1,0 +1,9 @@
+@font-face {
+  font-family: "IBM Plex Sans Var";
+  font-style: normal;
+    src: local(""),
+         url("woff2/IBM-Plex-Sans-Var-Roman.woff2") format("woff2 supports variations"),
+         url("woff2/IBM-Plex-Sans-Var-Roman.woff2") format("woff2-variations"),
+         url("woff/IBM-Plex-Sans-Var-Roman.woff") format("woff");
+  font-weight: 100 1000;
+}

@@ -1,0 +1,297 @@
+/* reset */
+
+* {
+	-webkit-text-size-adjust: none;
+	-webkit-font-smoothing: antialiased;
+	text-decoration: none;
+	font-weight: inherit;
+}
+
+html, body, div, dl, dt, dd, ul, ol, li, h1, h2, h3, h4, h5, h6, pre, code, form, fieldset, legend, input, button, textarea, select, p, blockquote, th, td, article, aside, figcaption, figure, footer, header, hgroup, menu, nav, section {
+	margin: 0;
+	padding: 0;
+	font-style: none;
+}
+
+fieldset, img, a img {
+	border: 0;
+	outline: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	font-size: 100%;
+}
+
+html {
+	font-size: 10px;
+}
+
+body {
+	font-size: 1.3rem;
+	font-family: 'IBM Plex Sans Var', -apple-system, sans-serif;
+	font-weight: 400;
+	line-height: 1.4em;
+	text-align: center;
+	-webkit-font-smoothing: subpixel-antialiased;
+	background: #000;
+	color: #fff;
+	min-height: 100vh;
+	transition: background 0.3s ease;
+}
+
+a {
+	color: inherit;
+}
+
+/* team colours */
+
+:root {
+	--mlb-laa:#ac091a;
+	--mlb-ana:#ac091a;
+	--mlb-az:#a71930;
+	--mlb-ari:#a71930;
+	--mlb-atl:#ba0c2f;
+	--mlb-bal:#df4601;
+	--mlb-bos:#0f264a;
+	--mlb-cws:#111;
+	--mlb-chc:#0e3386;
+	--mlb-cin:#c6011f;
+	--mlb-cle:#002b5c;
+	--mlb-col:#33006f;
+	--mlb-det:#001d43;
+	--mlb-hou:#002d62;
+	--mlb-kc:#0031a7;
+	--mlb-lad:#005a9c;
+	--mlb-la:#005a9c;
+	--mlb-mia:#00a3e0;
+	--mlb-mil:#12284b;
+	--mlb-min:#031f40;
+	--mlb-nyy:#002550;
+	--mlb-nym:#002d72;
+	--mlb-ath:#006141;
+	--mlb-phi:#c20c31;
+	--mlb-pit:#111;
+	--mlb-sd:#2f241d;
+	--mlb-sea:#0c2c56;
+	--mlb-sf:#111;
+	--mlb-stl:#b5121a;
+	--mlb-tb:#092c5c;
+	--mlb-tex:#003278;
+	--mlb-tor:#134A8E;
+	--mlb-was:#b0132b;
+	--mlb-wsh:#b0132b;
+}
+
+/* layout */
+
+body::after {
+	content: '';
+	position: fixed;
+	inset: 0;
+	background: linear-gradient(to bottom, transparent 40%, rgba(0,0,0,0.5) 100%);
+	pointer-events: none;
+	z-index: 0;
+}
+
+.title, .main, .legals {
+	position: relative;
+	z-index: 1;
+}
+
+.title {
+	display: flex;
+	align-items: center;
+	background: #000;
+	padding: 0 14px;
+	gap: 10px;
+	min-height: 56px;
+}
+
+.site-title {
+	font-size: 1.6rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: -0.01em;
+	white-space: nowrap;
+	margin-left: 4px;
+	flex-shrink: 0;
+}
+
+.title select {
+	width: 250px;
+	height: 30px;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	padding-left: 8px;
+}
+
+.title-selects {
+	margin-left: auto;
+	display: flex;
+	align-items: center;
+	gap: 10px;
+}
+
+.info-btn {
+	flex-shrink: 0;
+	font-weight: 700;
+	background: none;
+	border: none;
+	color: rgba(255,255,255,0.5);
+	font-size: 2rem;
+	cursor: pointer;
+	line-height: 1;
+	padding: 4px 6px;
+	transition: color 0.2s;
+}
+
+.info-btn:hover {
+	color: #fff;
+}
+
+/* modal */
+
+.modal-overlay {
+	display: none;
+	position: fixed;
+	inset: 0;
+	background: rgba(0,0,0,0.75);
+	z-index: 100;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+	box-sizing: border-box;
+}
+
+.modal-overlay.open {
+	display: flex;
+}
+
+.modal {
+	position: relative;
+	background: #1a1a1a;
+	border: 1px solid rgba(255,255,255,0.12);
+	border-radius: 12px;
+	max-width: 480px;
+	width: 100%;
+	padding: 32px 28px 28px;
+	box-sizing: border-box;
+}
+
+.modal h2 {
+	font-size: 2rem;
+	font-weight: 700;
+	margin-bottom: 16px;
+}
+
+.modal p {
+	font-size: 1.4rem;
+	line-height: 1.6em;
+	color: rgba(255,255,255,0.75);
+	margin-bottom: 14px;
+}
+
+.modal p:last-child {
+	margin-bottom: 0;
+}
+
+.modal p strong {
+	color: #fff;
+	font-weight: 600;
+}
+
+.modal-close {
+	position: absolute;
+	top: 14px;
+	right: 16px;
+	background: none;
+	border: none;
+	color: rgba(255,255,255,0.5);
+	font-size: 1.8rem;
+	cursor: pointer;
+	line-height: 1;
+	padding: 4px;
+	transition: color 0.2s;
+}
+
+.modal-close:hover {
+	color: #fff;
+}
+
+.main {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	min-height: calc(100vh - 56px);
+	padding: 40px 20px;
+	box-sizing: border-box;
+}
+
+.headshot-wrap {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	background: rgba(255,255,255,0.1);
+	margin-bottom: 28px;
+	overflow: hidden;
+	flex-shrink: 0;
+}
+
+.headshot-wrap img {
+	width: 100%;
+	height: 100%;
+	object-fit: contain;
+	transition: opacity 0.3s ease;
+}
+
+.days-header {
+	font-size: 5rem;
+	font-weight: 700;
+	line-height: 1.15;
+	max-width: 680px;
+	margin-bottom: 16px;
+}
+
+.sub-header {
+	font-size: 2.8rem;
+	line-height: 1.15;
+	font-weight: 700;
+	color: rgba(255,255,255,0.45);
+	margin-bottom: 16px;
+}
+
+.stats-line {
+	font-size: 2rem;
+	color: rgba(255,255,255,0.55);
+	letter-spacing: 0.02em;
+}
+
+.legals {
+	position: absolute;
+	bottom: 8px;
+	left: 0;
+	right: 0;
+	opacity: 0.4;
+	font-size: 1.1rem;
+	padding: 5px;
+	line-height: 1.3em;
+}
+
+.legals a {
+	text-decoration: underline;
+}
+
+/* mobile */
+
+@media only screen and (max-width: 600px) {
+	html { font-size: 9px; }
+	.title select { margin: 0 10px 0 0; }
+	.days-header { font-size: 2.8rem; }
+	.sub-header { font-size: 1.8rem; }
+	.stats-line { font-size: 1.4rem; }
+	.headshot-wrap { width: 140px; height: 140px; }
+	.site-title { font-size: 1.4rem; }
+	.modal { padding: 28px 20px 22px; }
+}
