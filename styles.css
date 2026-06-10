@@ -287,7 +287,10 @@ body::after {
 
 @media only screen and (max-width: 600px) {
 	html { font-size: 9px; }
-	.title select { margin: 0 10px 0 0; }
+	.title { flex-wrap: wrap; padding: 8px 14px; gap: 6px; min-height: unset; }
+	.title-selects { margin-left: 0; width: 100%; }
+	.title select { width: 100%; flex: 1; margin: 0; }
+	.main { min-height: calc(100vh - 90px); }
 	.days-header { font-size: 2.8rem; }
 	.sub-header { font-size: 1.8rem; }
 	.stats-line { font-size: 1.4rem; }
