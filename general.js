@@ -131,7 +131,8 @@ async function loadPlayerStats(playerId) {
 		const lastHrDate = splits[lastHrIndex].date;
 		const splitsSince = splits.slice(lastHrIndex + 1);
 		const gamesSinceHr = splitsSince.length;
-		const paSinceHr = splitsSince.reduce((sum, s) => sum + (s.stat?.plateAppearances ?? 0), 0);
+		const hrGamePAs = (splits[lastHrIndex].stat?.plateAppearances ?? 0) - (splits[lastHrIndex].stat?.homeRuns ?? 0);
+		const paSinceHr = hrGamePAs + splitsSince.reduce((sum, s) => sum + (s.stat?.plateAppearances ?? 0), 0);
 
 		const today = new Date();
 		today.setHours(0, 0, 0, 0);
