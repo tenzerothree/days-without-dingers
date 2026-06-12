@@ -41,6 +41,7 @@ body {
 
 a {
 	color: inherit;
+	text-decoration: underline;
 }
 
 /* team colours */
@@ -277,22 +278,20 @@ body::after {
 	font-size: 1.1rem;
 	padding: 5px;
 	line-height: 1.3em;
-}
-
-.legals a {
-	text-decoration: underline;
+	max-width: 80%;
+	margin: 0 auto;
 }
 
 /* mobile */
 
 @media only screen and (max-width: 600px) {
 	html { font-size: 9px; }
-	.title { flex-wrap: wrap; padding: 8px 14px; gap: 6px; min-height: unset; }
+	.title { flex-wrap: wrap; padding: 8px; gap: 6px; min-height: unset; }
 	.title-selects { margin-left: 0; width: 100%; }
 	.title select { width: 100%; flex: 1; margin: 0; }
 	.main { min-height: calc(100vh - 90px); }
 	.days-header { font-size: 2.8rem; }
-	.sub-header { font-size: 1.8rem; }
+	.sub-header { font-size: 1.8rem; padding: 0 10px; }
 	.stats-line { font-size: 1.4rem; }
 	.headshot-wrap { width: 140px; height: 140px; }
 	.site-title { font-size: 1.4rem; }
